@@ -42,13 +42,13 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.pixe.chatapp.data.entity.TextFieldStyle
 import com.pixe.chatapp.ui.theme.Colors
 import com.pixe.chatapp.ui.theme.Typography
 import com.pixe.chatapp.ui.theme.textFieldStyles
 import com.pixe.chatapp.viewModel.AuthenticationViewModel
 import com.pixe.chatapp.widgets.GoogleButton
 import com.pixe.chatapp.widgets.OrSplitter
+import com.pixe.chatapp.widgets.TextWithLineBehind
 import io.github.jan.supabase.compose.auth.ui.annotations.AuthUiExperimental
 import io.github.jan.supabase.compose.auth.ui.email.EmailField
 import io.github.jan.supabase.compose.auth.ui.password.PasswordField
@@ -98,40 +98,7 @@ fun LoginScreen(navController: NavController) {
                 }
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Box {
-                    Text(
-                        text = "Log in",
-                        style = Typography.titleMedium,
-                        modifier = Modifier
-                            .align(Alignment.Center)
-                            .layout { measurable, constraints ->
-                                // Measure the text
-                                val placeable = measurable.measure(constraints)
-
-                                // Layout the text
-                                layout(
-                                    placeable.width,
-                                    placeable.height + 5
-                                ) { // Add 5dp for the box height
-                                    placeable.placeRelative(0, 0) // Place the text at the top
-                                }
-                            }
-                            .drawBehind {
-                                // Draw the box after the text is drawn
-                                drawRect(
-                                    color = Colors.BrightMain,
-                                    topLeft = Offset(
-                                        0f,
-                                        size.height - 8.dp.toPx()
-                                    ), // Position at the bottom
-                                    size = Size(
-                                        size.width,
-                                        8.dp.toPx()
-                                    ) // Width of text, height of 5dp
-                                )
-                            }
-                    )
-                }
+                TextWithLineBehind(text = "Log in", color = Colors.BrightMain)
                 Text(
                     text = " to Chatbox",
                     style = Typography.titleMedium,
@@ -167,7 +134,7 @@ fun LoginScreen(navController: NavController) {
                 label = { Text("Email") },
                 placeholder = { Text("Enter your email",) },
                 singleLine = true,
-                colors = textFieldStyles(TextFieldStyle.Auth),
+                colors = textFieldStyles(),
                 leadingIcon = {
                     Icon(
                         Icons.Outlined.Email,
@@ -184,7 +151,7 @@ fun LoginScreen(navController: NavController) {
                 label = { Text("Password") },
                 placeholder = { Text("Enter your Password") },
                 singleLine = true,
-                colors = textFieldStyles(TextFieldStyle.Auth),
+                colors = textFieldStyles(),
                 leadingIcon = {
                     Icon(
                         Icons.Outlined.Lock,

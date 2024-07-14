@@ -24,7 +24,7 @@ fun Navigation() {
 
     val viewModel: AuthenticationViewModel = viewModel()
 
-    var defaultStart = "login_screen"
+    var defaultStart = "signup_screen"
 
     LaunchedEffect(Unit) {
         if (viewModel.getUserAccessToken()?.accessToken?.isEmpty() == false)

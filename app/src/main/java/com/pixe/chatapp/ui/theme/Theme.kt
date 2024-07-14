@@ -15,7 +15,6 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import com.pixe.chatapp.data.entity.TextFieldStyle
 
 private val DarkColorScheme = darkColorScheme(
     primary = Colors.Purple80,
@@ -64,23 +63,19 @@ fun ChatAppTheme(
 }
 
 @Composable
-fun textFieldStyles(styleName: TextFieldStyle): TextFieldColors {
-    return when (styleName) {
-        TextFieldStyle.Auth -> OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = Colors.Main, unfocusedBorderColor = Colors.OtherGrey,
-            focusedLabelColor = Colors.Main, unfocusedLabelColor = Colors.Main,
-            focusedTextColor = Colors.DarkGrey, unfocusedTextColor = Colors.DarkGrey,
-            focusedLeadingIconColor = Colors.Main, unfocusedLeadingIconColor = Colors.OtherGrey,
-            focusedTrailingIconColor = Colors.Main, unfocusedTrailingIconColor = Colors.OtherGrey,
-            errorTextColor = Colors.DarkGrey, errorLeadingIconColor = Colors.Error,
-            errorSupportingTextColor = Colors.Error, errorBorderColor = Colors.Error,
-            cursorColor = Colors.Main, errorCursorColor = Colors.Main,
-            errorLabelColor = Colors.Error,
-        )
+fun textFieldStyles(): TextFieldColors = OutlinedTextFieldDefaults.colors(
+    focusedBorderColor = Colors.Main, unfocusedBorderColor = Colors.OtherGrey,
+    focusedLabelColor = Colors.Main, unfocusedLabelColor = Colors.Main,
+    focusedTextColor = Colors.DarkGrey, unfocusedTextColor = Colors.DarkGrey,
+    focusedLeadingIconColor = Colors.Main, unfocusedLeadingIconColor = Colors.OtherGrey,
+    focusedTrailingIconColor = Colors.Main, unfocusedTrailingIconColor = Colors.OtherGrey,
+    errorTextColor = Colors.DarkGrey, errorLeadingIconColor = Colors.Error,
+    errorSupportingTextColor = Colors.Error, errorBorderColor = Colors.Error,
+    cursorColor = Colors.Main, errorCursorColor = Colors.Main,
+    errorLabelColor = Colors.Error, unfocusedContainerColor = Color.Transparent,
+    focusedContainerColor = Color.Transparent, errorContainerColor = Color.Transparent
+)
 
-        else -> OutlinedTextFieldDefaults.colors()
-    }
-}
 
 @Composable
 fun cardColors(): ButtonColors = ButtonDefaults.outlinedButtonColors(
