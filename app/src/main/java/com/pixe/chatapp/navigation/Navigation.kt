@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.pixe.chatapp.data.network.SupabaseClient.supabase
 import com.pixe.chatapp.screens.ChatScreen
+import com.pixe.chatapp.screens.HomeScreen
 import com.pixe.chatapp.screens.LoginScreen
 import com.pixe.chatapp.screens.OnboardingScreen
 import com.pixe.chatapp.screens.SignupScreen
@@ -19,12 +20,11 @@ import io.github.jan.supabase.gotrue.auth
 @Composable
 fun Navigation() {
 
-
     val navController = rememberNavController()
 
     val viewModel: AuthenticationViewModel = viewModel()
 
-    var defaultStart = "signup_screen"
+    var defaultStart = "home_screen"
 
     LaunchedEffect(Unit) {
         if (viewModel.getUserAccessToken()?.accessToken?.isEmpty() == false)
@@ -44,6 +44,9 @@ fun Navigation() {
             })
             composable("chat_screen", content = {
                 ChatScreen()
+            })
+            composable("home_screen", content = {
+                HomeScreen()
             })
         })
 }

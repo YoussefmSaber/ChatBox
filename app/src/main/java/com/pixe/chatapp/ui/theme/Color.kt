@@ -13,11 +13,13 @@ object Colors {
     val Pink40 = Color(0xFF7D5260)
 
     val Main = Color(0xFF24786D)
+    val MainTransparent = Color(0x3324786D)
     val BrightMain = Color(0xFF58C3B6)
     val Black = Color(0xFF000E08)
     val Grey = Color(0xFF797C7B)
     val DarkGrey = Color(0xFF121414)
     val BlueishWhite = Color(0xFFF2F7FB)
+    val DarkWhite = Color(0xFFF6F6F7)
     val White = Color(0xFFFFFFFF)
     val OtherGrey = Color(0xFFCDD1D0)
 

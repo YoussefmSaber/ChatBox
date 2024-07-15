@@ -52,20 +52,25 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.constraintlayout.core)
+    val VERSION = "2.5.2"
+
+    // Navigation
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
+
+    // Material 3
     implementation(libs.androidx.compose.material3)
-    val VERSION = "2.5.2"
-    val ktor_version = "2.3.5"
+    implementation(libs.androidx.material3)
+
+    //Core
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+
+    // Test and Debug
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -74,26 +79,53 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // ViewModel and lifeCycle
     implementation (libs.kotlinx.coroutines.android)
     implementation (libs.androidx.lifecycle.viewmodel.compose)
     implementation (libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // Glide Image Processing
+    implementation(libs.compose)
+
+    // Google Fonts
+    implementation(libs.androidx.ui.text.google.fonts)
+
+    // Constraint Layout
+    implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.constraintlayout.core)
+
+    // Feather Icons
+    implementation("br.com.devsrsouza.compose.icons:feather:1.1.0")
+    implementation("br.com.devsrsouza.compose.icons:eva-icons:1.1.0")
+
+
+    // Supabase Core Dependencies for Compose
     implementation(platform("io.github.jan-tennert.supabase:bom:$VERSION"))
-    implementation("io.github.jan-tennert.supabase:serializer-moshi:$ktor_version")
+
+        // Supabase Moshi
+    implementation("io.github.jan-tennert.supabase:serializer-moshi:$VERSION")
+
+        // Supabase Auth
     implementation("io.github.jan-tennert.supabase:compose-auth:2.5.2")
     implementation("io.github.jan-tennert.supabase:compose-auth-ui:2.5.2")
+        // Supabase Storage
     implementation("io.github.jan-tennert.supabase:storage-kt:2.5.2")
+
+        // Supabase RealTime
     implementation("io.github.jan-tennert.supabase:realtime-kt:2.5.2")
-    implementation("io.github.jan-tennert.supabase:gotrue-kt:2.5.2")
-    implementation ("io.ktor:ktor-client-cio:$ktor_version")
-
-    implementation ("io.ktor:ktor-client-android:$ktor_version")
-
-    implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
-
-    implementation(libs.androidx.ui.text.google.fonts)
-    implementation(libs.postgrest.kt)
-    implementation(libs.gotrue.kt)
     implementation(libs.realtime.kt)
+
+        // Supabase GoTrue
+    implementation("io.github.jan-tennert.supabase:gotrue-kt:2.5.2")
+    implementation(libs.gotrue.kt)
+
+        // Supabase Ktor
+    implementation ("io.ktor:ktor-client-cio:2.3.5")
+    implementation ("io.ktor:ktor-client-android:2.3.5")
     implementation(libs.ktor.client.core)
-    implementation(libs.androidx.constraintlayout.compose)
+
+        // Supabase Postgrest
+    implementation(libs.postgrest.kt)
+
 }
