@@ -10,6 +10,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
@@ -21,7 +22,7 @@ import com.pixe.chatapp.widgets.ChatBox
 import com.pixe.chatapp.widgets.ChatBubbles
 import io.github.jan.supabase.gotrue.auth
 
-
+@Preview(showBackground = true)
 @Composable
 fun ChatScreen() {
 

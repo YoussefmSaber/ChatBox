@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.pixe.chatapp.navigation.Navigation
 import com.pixe.chatapp.ui.theme.ChatAppTheme
+import com.pixe.chatapp.widgets.UserChatItem
 
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ChatAppTheme {
-                Navigation()
+                UserChatItem()
             }
         }
     }
