@@ -1,4 +1,4 @@
-package com.pixe.chatapp.screens
+package com.pixe.chatapp.screens.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth

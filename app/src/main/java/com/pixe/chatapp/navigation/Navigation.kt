@@ -1,21 +1,17 @@
 package com.pixe.chatapp.navigation
 
-import androidx.compose.animation.core.Animation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.pixe.chatapp.data.network.SupabaseClient.supabase
-import com.pixe.chatapp.screens.ChatScreen
-import com.pixe.chatapp.screens.HomeScreen
-import com.pixe.chatapp.screens.LoginScreen
-import com.pixe.chatapp.screens.OnboardingScreen
-import com.pixe.chatapp.screens.SignupScreen
-import com.pixe.chatapp.utils.testToken
+import com.pixe.chatapp.screens.main.ChatScreen
+import com.pixe.chatapp.screens.main.HomeScreen
+import com.pixe.chatapp.screens.auth.LoginScreen
+import com.pixe.chatapp.screens.auth.OnboardingScreen
+import com.pixe.chatapp.screens.auth.SignupScreen
 import com.pixe.chatapp.viewModel.AuthenticationViewModel
-import io.github.jan.supabase.gotrue.auth
 
 @Composable
 fun Navigation() {
